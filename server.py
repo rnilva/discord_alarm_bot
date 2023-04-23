@@ -23,7 +23,7 @@ class Client(discord.Client):
     @tasks.loop(seconds=5)
     async def check_server(self):
         try:
-            data: str = q.get(block=False)
+            data: str = self.q.get(block=False)
             channel = self.get_channel(self.channel_id)
             await channel.send(data)
         except Empty:
