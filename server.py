@@ -46,7 +46,7 @@ def start_server(queue: mp.Queue):
         while True:
             data, address = s.recvfrom(1024)
             buf = []
-            print(f"Received {data.decode()} from {address}")
+            # print(f"Received {data.decode()} from {address}")
             buf.append(data.decode())
 
             msg = str.join("", buf)
